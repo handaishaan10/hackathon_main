@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes - Attendance Management</title>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+    <link rel="stylesheet" href="class.css">
+
+
+          
+</head>
+<body>
+    <!-- Header -->
+    <header>
+      <i class="fa-solid fa-bars menu-toggle"></i>
+
+        <div class="logo">Logo</div>
+        <nav>
+            <a href="#">home</a>
+            <a href="#">Classes</a>
+            <a href="#">home</a>
+            <a href="#">home</a>
+        </nav>
+        <div class="user-profile">
+            <span>abhirajgoat</span>
+            <div class="user-avatar"></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1 class="page-title">Classes</h1>
+        <p class="page-subtitle">Assign and manage materials</p>
+
+        <div class="content-grid">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Class Assignment Card -->
+                <div class="card">
+                    <h2 class="card-title">Assign and manage materials</h2>
+                    <p class="card-description">
+                        Select a class, choose a course and assign to whole class or absentees.<br>
+                    </p>
+
+                    <form>
+                        <div class="form-group">
+                            <label for="class-select">Classes</label>
+                            <select id="class-select">
+                                <option value="9B">9B</option>
+                                <option value="9A">9A</option>
+                                <option value="10A">10A</option>
+                                <option value="10B">10B</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="course-select">Course</label>
+                            <select id="course-select">
+                                <option value="math">Math : Socialism in linear algebra</option>
+                                <option value="physics">Physics : Quantum Mechanics</option>
+                                <option value="chemistry">Chemistry : Organic Chemistry</option>
+                                <option value="biology">Biology : Cell Biology</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date-select">Date</label>
+                            <input 
+                                type="date" 
+                                id="date-select"
+                                class="date-input"
+                                placeholder="dd-mm-yyyy"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="material-select">Material</label>
+                            <select id="material-select">
+                                <option value="">Browse</option>
+                                <option value="material1">Material 1</option>
+                                <option value="material2">Material 2</option>
+                            </select>
+                        </div>
+
+                        <div class="button-group">
+                            <div class="assignment-buttons">
+                                <button type="button" class="btn btn-primary">Assign to whole class</button>
+                                <button type="button" class="btn btn-secondary">Assign to absentees</button>
+                            </div>
+                            <div class="status-badges">
+                                <span class="badge badge-present">Present : 30</span>
+                                <span class="badge badge-absent">Absent : 2</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Students List Card -->
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <h2 class="card-title" style="margin-bottom: 0;">Students</h2>
+                        <span style="font-size: 16px; color: rgb(0, 0, 0); font-weight: 600px;">10/10/2010</span>
+                    </div>
+                    <div class="students-scroll">
+                        <!-- Student 1 -->
+                        <div class="attendance-card">
+                            <div class="student-info">
+                                <input type="checkbox" class="checkbox">
+                                <div class="student-details">
+                                    <h3>Abhiraj Goat</h3>
+                                    <p>+91 0000000000</p>
+                                </div>
+                            </div>
+                            <span class="attendance-status status-present">Present</span>
+                        </div>
+
+                        <!-- Student 2 -->
+                        <div class="attendance-card">
+                            <div class="student-info">
+                                <input type="checkbox" class="checkbox">
+                                <div class="student-details">
+                                    <h3>Abhiraj Goat</h3>
+                                    <p>+91 0000000000</p>
+                                </div>
+                            </div>
+                            <span class="attendance-status status-absent">Absent</span>
+                        </div>
+
+                        <!-- Student 3 -->
+                        <div class="attendance-card">
+                            <div class="student-info">
+                                <input type="checkbox" class="checkbox">
+                                <div class="student-details">
+                                    <h3>Abhiraj Goat</h3>
+                                    <p>+91 0000000000</p>
+                                </div>
+                            </div>
+                            <span class="attendance-status status-absent">Absent</span>
+                        </div>
+
+                        <!-- Student 4 -->
+                        <div class="attendance-card">
+                            <div class="student-info">
+                                <input type="checkbox" class="checkbox">
+                                <div class="student-details">
+                                    <h3>Abhiraj Goat</h3>
+                                    <p>+91 0000000000</p>
+                                </div>
+                            </div>
+                            <span class="attendance-status status-present">Present</span>
+                        </div>
+
+                        <!-- Student 5 (extra for scrolling) -->
+                        <div class="attendance-card">
+                            <div class="student-info">
+                                <input type="checkbox" class="checkbox">
+                                <div class="student-details">
+                                    <h3>Abhiraj Goat</h3>
+                                    <p>+91 0000000000</p>
+                                </div>
+                            </div>
+                            <span class="attendance-status status-present">Present</span>
+                        </div>
+
+                        <!-- Student 6 (extra for scrolling) -->
+                        <div class="attendance-card">
+                            <div class="student-info">
+                                <input type="checkbox" class="checkbox">
+                                <div class="student-details">
+                                    <h3>Abhiraj Goat</h3>
+                                    <p>+91 0000000000</p>
+                                </div>
+                            </div>
+                            <span class="attendance-status status-absent">Absent</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- File Upload Card -->
+                <div class="card">
+                    <h2 class="card-title">Upload Attendence Sheet</h2>
+                    <p class="card-description">
+                        We'll OCR names, mark them present, and compute absentees. Review and adjust if needed.
+                    </p>
+                  <div class="upload-area">
+                          <i class="fa-solid fa-cloud-arrow-up"></i>
+    <div>
+  
+        <span class="upload-text">Drag & drop files or </span>
+        <span class="upload-browse">Browse</span>
+    </div>
+    <div class="upload-formats">Supported formates: JPEG, PNG, PDF, lauda lassan</div>
+</div>
+                </div>
+
+                <!-- Guidelines Card -->
+                <div class="card">
+                    <h2 class="card-title">Guidelines</h2>
+                    <ul style="font-size: 14px; color: rgba(103, 103, 103, 1); line-height: 1.8; padding-left: 20px;">
+                        <li>The image should be under 10mb</li>
+                        <li>It should be not blurred</li>
+                        <li>Take the image from the top for clear image</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Button toggle functionality
+        const assignButtons = document.querySelectorAll('.assignment-buttons .btn');
+        assignButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                assignButtons.forEach(btn => {
+                    btn.classList.remove('btn-primary');
+                    btn.classList.add('btn-secondary');
+                });
+                this.classList.remove('btn-secondary');
+                this.classList.add('btn-primary');
+            });
+        });
+
+        // Upload area click handler
+        const uploadArea = document.querySelector('.upload-area');
+        uploadArea.addEventListener('click', function() {
+            alert('File upload clicked! In a real implementation, this would open a file picker.');
+        });
+
+        // Drag and drop styling
+        uploadArea.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            this.style.borderColor = 'rgba(56, 78, 183, 0.6)';
+        });
+
+        uploadArea.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            this.style.borderColor = 'rgba(56, 78, 183, 0.3)';
+        });
+
+        uploadArea.addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.style.borderColor = 'rgba(56, 78, 183, 0.3)';
+            console.log('Files dropped:', e.dataTransfer.files);
+        });
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+
+
+    </script>
+</body>
+</html>
