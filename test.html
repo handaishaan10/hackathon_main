@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tests • Create</title>
+ <link rel="stylesheet" href="test.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Site header">
+      <div class="header-inner">
+        <div class="brand">Logo</div>
+        <nav aria-label="Primary">
+          <a href="#">home</a>
+          <a href="#">Classes</a>
+          <a href="#">home</a>
+          <a href="#">home</a>
+        </nav>
+        <div class="spacer"></div>
+        <div class="user">
+          <span>abhirajgoat</span>
+          <span class="avatar" aria-hidden="true"></span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="page-title">Tests</h1>
+       Note: subtitle removed as requested 
+
+      <section class="tabs" aria-label="Create flow tabs">
+        <div class="tab active" role="tab" aria-selected="true">Create</div>
+        <div class="tab" role="tab" aria-selected="false">Upload</div>
+        <div class="tab" role="tab" aria-selected="false">Assign</div>
+      </section>
+
+      <section class="card" aria-labelledby="create-test-heading">
+        <h2 id="create-test-heading">Create Test</h2>
+        <p class="helper">Define the test details.</p>
+
+        <form action="#" method="post" novalidate>
+          <div class="field">
+            <label class="label" for="class">Select Class</label>
+            <select id="class" name="class" class="control" aria-describedby="classHelp">
+              <option>10B</option>
+              <option>10A</option>
+              <option>9C</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label class="label" for="title">Title</label>
+            <input id="title" name="title" type="text" class="control" placeholder="abcd" />
+          </div>
+
+          <div class="field">
+            <label class="label" for="desc">Description</label>
+            <textarea id="desc" name="desc" class="control" placeholder="abcd"></textarea>
+          </div>
+
+          <div class="field">
+            <label class="label" for="due">Due Date</label>
+            <div class="controls-row">
+              <input id="due" name="due" type="date" class="control" />
+            </div>
+          </div>
+
+          <div class="pad"></div>
+          <button type="submit" class="btn">Save and continue</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
