@@ -1,74 +1,280 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tests • Create</title>
- <link rel="stylesheet" href="test.css" />
-  </head>
-  <body>
-    <header class="site-header" aria-label="Site header">
-      <div class="header-inner">
-        <div class="brand">Logo</div>
-        <nav aria-label="Primary">
-          <a href="#">home</a>
-          <a href="#">Classes</a>
-          <a href="#">home</a>
-          <a href="#">home</a>
-        </nav>
-        <div class="spacer"></div>
-        <div class="user">
-          <span>abhirajgoat</span>
-          <span class="avatar" aria-hidden="true"></span>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="logo">Logo</div>
+                    <nav class="nav">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="class.html" class="nav-link">Classes</a>
+                        <a href="test.html" class="nav-link">Tests</a>
+                        <a href="yt.html" class="nav-link">Learn</a>
+                    </nav>
+                </div>
+                <div class="header-right">
+                    <span class="username">abhirajgoat</span>
+                    <div class="avatar"></div>
+                </div>
+            </div>
         </div>
-      </div>
     </header>
 
-    <main>
-      <h1 class="page-title">Tests</h1>
-       Note: subtitle removed as requested 
-
-      <section class="tabs" aria-label="Create flow tabs">
-        <div class="tab active" role="tab" aria-selected="true">Create</div>
-        <div class="tab" role="tab" aria-selected="false">Upload</div>
-        <div class="tab" role="tab" aria-selected="false">Assign</div>
-      </section>
-
-      <section class="card" aria-labelledby="create-test-heading">
-        <h2 id="create-test-heading">Create Test</h2>
-        <p class="helper">Define the test details.</p>
-
-        <form action="#" method="post" novalidate>
-          <div class="field">
-            <label class="label" for="class">Select Class</label>
-            <select id="class" name="class" class="control" aria-describedby="classHelp">
-              <option>10B</option>
-              <option>10A</option>
-              <option>9C</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label class="label" for="title">Title</label>
-            <input id="title" name="title" type="text" class="control" placeholder="abcd" />
-          </div>
-
-          <div class="field">
-            <label class="label" for="desc">Description</label>
-            <textarea id="desc" name="desc" class="control" placeholder="abcd"></textarea>
-          </div>
-
-          <div class="field">
-            <label class="label" for="due">Due Date</label>
-            <div class="controls-row">
-              <input id="due" name="due" type="date" class="control" />
+    <main class="main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Tests</h1>
+                <p class="page-description">Create, upload, and assign tests to students.</p>
             </div>
-          </div>
 
-          <div class="pad"></div>
-          <button type="submit" class="btn">Save and continue</button>
-        </form>
-      </section>
+            <div class="tabs">
+                <button class="tab-button active" data-tab="create">Create</button>
+                <button class="tab-button" data-tab="upload">Upload</button>
+                <button class="tab-button" data-tab="assign">Assign</button>
+            </div>
+
+            <div id="create-tab" class="tab-content active">
+                <div class="card">
+                    <div class="form-steps-container">
+                        <div id="step-1" class="form-step active">
+                            <div class="card-header">
+                                <div class="card-header-content">
+                                    <h2 class="card-title">Create Test</h2>
+                                    <p class="card-description">Enter basic test details</p>
+                                </div>
+                            </div>
+                            <form class="form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="label">Class</label>
+                                        <select id="class-select" class="select">
+                                            <option>Select a class</option>
+                                            <option>Class 10</option>
+                                            <option>Class 12</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="label">Due Date</label>
+                                        <input type="text" id="due-date" class="input" placeholder="DD-MM-YYYY">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="label">Title</label>
+                                    <input type="text" id="title" class="input" placeholder="Enter test title">
+                                </div>
+                                <div class="form-group">
+                                    <label class="label">Description</label>
+                                    <textarea id="description" class="textarea" placeholder="Enter test description"></textarea>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-primary" onclick="goToStep(2)">Next</button>
+                                    <button type="button" class="btn btn-secondary">Upload</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div id="step-2" class="form-step">
+                            <div class="card-header">
+                                <div class="card-header-content">
+                                    <h2 class="card-title">Create Test</h2>
+                                    <p class="card-description">Configure the details</p>
+                                </div>
+                                <button type="button" class="btn-back" onclick="goToStep(1)" title="Go back">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                                        <polyline points="12 19 5 12 12 5"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                            <form class="form">
+                                <div class="form-group">
+                                    <label class="label">Topic</label>
+                                    <select id="topic-select" class="select">
+                                        <option>State your test topic...</option>
+                                        <option>Mathematics</option>
+                                        <option>Science</option>
+                                        <option>English</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="label">Difficulty</label>
+                                    <select id="difficulty-select" class="select">
+                                        <option>Medium</option>
+                                        <option>Easy</option>
+                                        <option>Hard</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="label">No of Questions (1-50)</label>
+                                    <input type="number" id="num-questions" class="input" placeholder="34" min="1" max="50">
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-primary" onclick="handleSave()">Save</button>
+                                    <button type="button" class="btn btn-secondary" onclick="goToStep(1)">Download</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="upload-tab" class="tab-content">
+                <div class="card">
+                    <div class="upload-container">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <h2 class="card-title">Upload</h2>
+                                <p class="card-description">Upload your test files</p>
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="addFileInput()">Add</button>
+                        </div>
+
+                        <div id="files-list" class="files-list">
+                            <div class="file-input-group">
+                                <div class="file-input-wrapper">
+                                    <input type="text" class="input file-name-input" placeholder="File 1" readonly>
+                                    <button type="button" class="btn-remove" onclick="removeFileInput(this)">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-primary" style="width: auto; align-self: flex-start;">Save and continue</button>
+
+                        <div id="drop-zone" class="drop-zone">
+                            <p class="placeholder-text">PREVIEW</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="assign-tab" class="tab-content">
+                <div class="card">
+                    <p class="placeholder-text">abhiraj goat assign mai kya aayega ????</p>
+                </div>
+            </div>
+        </div>
     </main>
-  </body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabName = this.getAttribute('data-tab');
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    this.classList.add('active');
+                    document.getElementById(tabName + '-tab').classList.add('active');
+                    if (tabName === 'create') {
+                        goToStep(1);
+                    }
+                });
+            });
+        });
+
+        function goToStep(stepNumber) {
+            const steps = document.querySelectorAll('.form-step');
+            const currentStep = document.querySelector('.form-step.active');
+            const nextStep = document.getElementById('step-' + stepNumber);
+            if (!nextStep || nextStep === currentStep) return;
+            const isMovingForward = stepNumber > parseInt(currentStep.id.split('-')[1]);
+            currentStep.classList.remove('active');
+            if (isMovingForward) {
+                currentStep.classList.add('exit-left');
+            }
+            setTimeout(() => {
+                nextStep.classList.add('active');
+                nextStep.classList.remove('exit-left');
+            }, 50);
+        }
+
+        function handleSave() {
+            const topic = document.getElementById('topic-select').value;
+            const difficulty = document.getElementById('difficulty-select').value;
+            const numQuestions = document.getElementById('num-questions').value;
+            console.log('Saving test configuration:', {
+                topic: topic,
+                difficulty: difficulty,
+                numQuestions: numQuestions
+            });
+            alert('Test configuration saved!\n\nTopic: ' + topic + '\nDifficulty: ' + difficulty + '\nQuestions: ' + numQuestions);
+        }
+
+        function handleCreate() {
+            const classSelect = document.getElementById('class-select').value;
+            const dueDate = document.getElementById('due-date').value;
+            const title = document.getElementById('title').value;
+            const description = document.getElementById('description').value;
+            console.log('Creating test:', {
+                class: classSelect,
+                dueDate: dueDate,
+                title: title,
+                description: description
+            });
+            alert('Test created successfully!\n\nClass: ' + classSelect + '\nTitle: ' + title);
+        }
+
+        document.getElementById('due-date').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.slice(0, 2) + '-' + value.slice(2);
+            }
+            if (value.length >= 5) {
+                value = value.slice(0, 5) + '-' + value.slice(5, 9);
+            }
+            e.target.value = value;
+        });
+
+        function addFileInput() {
+            const filesList = document.getElementById('files-list');
+            const fileCount = filesList.children.length + 1;
+            const newFileInput = document.createElement('div');
+            newFileInput.className = 'file-input-group';
+            newFileInput.innerHTML = `
+                <div class="file-input-wrapper">
+                    <input type="text" class="input file-name-input" placeholder="File ${fileCount}" readonly>
+                    <button type="button" class="btn-remove" onclick="removeFileInput(this)">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                </div>
+            `;
+            filesList.appendChild(newFileInput);
+        }
+
+        function removeFileInput(button) {
+            button.closest('.file-input-group').remove();
+        }
+
+        const dropZone = document.getElementById('drop-zone');
+        if (dropZone) {
+            dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropZone.style.backgroundColor = '#f5f5f5';
+            });
+            dropZone.addEventListener('dragleave', () => {
+                dropZone.style.backgroundColor = 'transparent';
+            });
+            dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropZone.style.backgroundColor = 'transparent';
+                console.log('Files dropped:', e.dataTransfer.files);
+            });
+        }
+    </script>
+</body>
 </html>
