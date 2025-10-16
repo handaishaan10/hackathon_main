@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="studentdash.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Logo</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="class.html">Classes</a>
+            <a href="test.html">Test</a>
+            <a href="yt.html">Learn</a>
+        </nav>
+        <div class="user-profile">
+            <span class="user-name">abhirajgoat</span>
+            <div class="profile-circle"></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="greeting">
+            <h1>Hi! Abhiraj</h1>
+            <p>Manage your courses, track student progress, and access teaching resources.</p>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-title">Total Assignments</span>
+                    <div class="stat-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                </div>
+                <div class="stat-number">3</div>
+                <div class="stat-subtitle">1 due soon</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-title">Library items</span>
+                    <div class="stat-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                </div>
+                <div class="stat-number">2</div>
+                <div class="stat-subtitle">class average</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-title">Assigned Tests</span>
+                    <div class="stat-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                </div>
+                <div class="stat-number">1</div>
+                <div class="stat-subtitle">due dd/mm/yyy</div>
+            </div>
+        </div>
+
+        <div class="tabs-container">
+            <div class="tabs-header">
+                <button class="tab-button active" onclick="switchTab(0)">Assignments</button>
+                <button class="tab-button" onclick="switchTab(1)">Library</button>
+                <button class="tab-button" onclick="switchTab(2)">Tests</button>
+            </div>
+
+            <div class="tabs-content">
+                <div class="tab-pane active">
+                    <div class="tab-title">Assigned study materials</div>
+                    <div class="tab-subtitle">search and filter your material</div>
+                    <div class="materials-grid">
+                        <div class="material-card">
+                            <div class="material-header">
+                                <div class="material-title">Algebra: socialism in linear algebra</div>
+                                <button class="ask-doubt-btn">Ask doubt</button>
+                            </div>
+                            <div class="material-code">abcd</div>
+                            <div class="material-tag">Maths 10B</div>
+                            <div class="material-file">Rishik.pdf</div>
+                        </div>
+
+                        <div class="material-card">
+                            <div class="material-header">
+                                <div class="material-title">Algebra: socialism in linear algebra</div>
+                                <button class="ask-doubt-btn">Ask doubt</button>
+                            </div>
+                            <div class="material-code">abcd</div>
+                            <div class="material-tag">Maths 10B</div>
+                            <div class="material-file">Rishik.pdf</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <p>No library items yet</p>
+                    </div>
+                </div>
+
+                <div class="tab-pane">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <p>No tests assigned yet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(index) {
+            const panes = document.querySelectorAll('.tab-pane');
+            panes.forEach(pane => pane.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            panes[index].classList.add('active');
+            buttons[index].classList.add('active');
+        }
+    </script>
+</body>
+</html>
