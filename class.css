@@ -11,50 +11,36 @@ body {
     overflow-x: hidden;
 }
 
-header {
-    background-color: rgba(254, 254, 255, 0.2);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    display: flex;
-    align-items: center;
-    gap: 100px;
-    padding: 11px 69px;
-    max-width: 1950px;
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+body {
+  font-family: "Geist", sans-serif;
+  background-color: #FBF9F7;
 }
-
-.logo {
-    font-size: 32px;
-    font-weight: 600;
-    color: black;
-    flex-grow: 1;
+.navbar {
+  background-color: #FBF9F7;
+  border-bottom: 1px solid #FBF9F7;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  width: 100%;
 }
-
-nav {
-    display: flex;
-    align-items: center;
-    width: 200%;
-    gap: 0px;
-    font-size: 20px;
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.25rem;
 }
-
-nav a {
-    margin-left: 200px;
-    color: black;
-    text-decoration: none;
+.nav-link {
+  color: #333;
+  margin: 0 1rem;
 }
-
-.user-profile {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    font-size: 20px;
-    font-weight: 500;
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
-
-.user-avatar {
-    width: 40px;
-    height: 40px;
-    background-color: black;
-    border-radius: 50%;
+.profile-icon {
+  width: 32px;
+  height: 32px;
+  background-color: #333;
+  border-radius: 50%;
 }
 
 main {
@@ -62,7 +48,7 @@ main {
 }
 
 .page-title {
-    font-size: 64px;
+    font-size: 2.5rem;
     font-weight: 600;
     color: rgba(9, 6, 7, 1);
 }

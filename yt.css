@@ -24,44 +24,38 @@ body {
     flex-direction: column;
 }
 
+
+body {
+  font-family: "Geist", sans-serif;
+  background-color: #FBF9F7;
+}
 .navbar {
-    background-color: #FBF9F7;
-    border-bottom: 1px solid #eee;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    z-index: 10;
+  background-color: #FBF9F7;
+  border-bottom: 1px solid #FBF9F7;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  width: 100%;
 }
-
 .navbar-brand {
-    font-weight: bold;
-    font-size: 1.25rem;
+  font-weight: bold;
+  font-size: 1.25rem;
 }
-
 .nav-link {
-    color: #333 !important;
-    margin: 0 1rem;
+  color: #333;
+  margin: 0 1rem;
 }
-
 .profile-section {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
-
 .profile-icon {
-    width: 32px;
-    height: 32px;
-    background-color: #333;
-    border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  background-color: #333;
+  border-radius: 50%;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    padding: 40px 20px;
-    position: relative;
-    margin: auto;
-}
 
 .container::after {
     content: '';
