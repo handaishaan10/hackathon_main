@@ -1,165 +1,220 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-   <link rel="stylesheet" href="dash.css">
-   
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Transform Education — AI Powered Learning</title>
+
+  <!-- User requested "Geist" from Google Fonts.
+       If Geist is not available on Google Fonts the browser will fall back to the stack. -->
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Fallback to Inter / system sans if Geist isn't present -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="land.css">
 </head>
 <body>
-   
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="studentdash.html">Logo</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="class.html">Classes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="test.html">Tests</a></li>
-                    <li class="nav-item"><a class="nav-link" href="yt.html">Learn</a></li>
-                </ul>
-                <div class="profile-section">
-                    <span>abhirajoat</span>
-                    <div class="profile-icon"></div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
- 
-    <div class="dashboard-header">
-        <h1>Dashboard</h1>
-        <p>Manage your courses, track student progress, and access teaching resources.</p>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="pill">PLATFORM OF EDUCATION</span>
+        <h1 class="logo">ShikshaNet</h1>
+      </div>
+      <nav class="nav">
+        <a class="btn ghost" href="#features">Features</a>
+        <a class="btn" href="#contact">Get started</a>
+      </nav>
     </div>
+  </header>
 
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <div class="eyebrow">Transform Education</div>
+          <h2 class="hero-title">Transform Education with AI-Powered Learning</h2>
+          <p class="hero-desc">
+            Connect teachers and students seamlessly. Manage classes, assignments, and progress with cutting-edge AI tools tailored for modern education.
+          </p>
 
-    <div class="stats-container">
-        <div class="row g-3">
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="stat-card blue">
-                    <div class="stat-label">Class</div>
-                    <div class="stat-value blue">IX<sub>B</sub></div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="stat-card orange">
-                    <div class="stat-icon orange"><i class="bi bi-book"></i></div>
-                    <div class="stat-label">Total Courses</div>
-                    <div class="stat-value">2</div>
-                    <div class="stat-subtext">1 completed</div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="stat-card green">
-                    <div class="stat-icon green"><i class="bi bi-check-circle"></i></div>
-                    <div class="stat-label">Completion Rate</div>
-                    <div class="stat-value">70%</div>
-                    <div class="stat-subtext">class average</div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="stat-card purple">
-                    <div class="stat-icon purple"><i class="bi bi-people"></i></div>
-                    <div class="stat-label">Active Students</div>
-                    <div class="stat-value">21</div>
-                </div>
-            </div>
+          <div class="hero-cta">
+            <a class="btn primary" href="#contact">Get started →</a>
+            <a class="btn ghost" href="dash.html">Login</a>
+          </div>
+
+          <ul class="stats">
+            <li><strong>67+</strong><span>active schools</span></li>
+            <li><strong>50+</strong><span>courses created</span></li>
+            <li><strong>50+</strong><span>schools enrolled</span></li>
+          </ul>
         </div>
-    </div>
 
- 
-    <div class="content-section">
-        <div class="row g-3">
-           
-            <div class="col-12 col-lg-7">
-                <div class="section-card peach">
-                    <div class="section-header">
-                        <div>
-                            <h2 class="section-title">My Courses</h2>
-                            <p class="section-subtitle">Courses that you are currently teaching</p>
-                        </div>
-                        <div class="add-btn" onclick="addCourse()">+</div>
-                    </div>
+        <div class="hero-right">
+          <div class="badge top-right">Interactive learning</div>
 
-                    <div class="course-item">
-                        <div class="course-header">
-                            <div>
-                                <h3 class="course-title">Graphs - Grade 7</h3>
-                                <p class="course-subtitle">Introduction to Graphs.</p>
-                            </div>
-                            <button class="manage-btn">Manage</button>
-                        </div>
-                        <div class="progress-container">
-                            <div class="progress-label">70% complete</div>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 70%"></div>
-                            </div>
-                        </div>
-                    </div>
+          <div class="hero-card-illustration" aria-hidden="true">
+            <!-- Rounded placeholder area for main illustration -->
+            <svg viewBox="0 0 600 380" class="illus-svg" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#f3f4ff"/>
+                  <stop offset="1" stop-color="#e6fff8"/>
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" rx="18" ry="18" width="100%" height="100%" fill="url(#g1)"></rect>
+            </svg>
+          </div>
 
-                    <div class="course-item">
-                        <div class="course-header">
-                            <div>
-                                <h3 class="course-title">Graphs - Grade 7</h3>
-                                <p class="course-subtitle">Introduction to Graphs.</p>
-                            </div>
-                            <button class="manage-btn">Manage</button>
-                        </div>
-                        <div class="progress-container">
-                            <div class="progress-label">70% complete</div>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 70%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-           
-            <div class="col-12 col-lg-5">
-               
-                <div class="section-card light-green mb-2">
-                    <h2 class="section-title mb-3">Quick Actions</h2>
-                    <button class="action-btn">
-                        <i class="bi bi-plus-circle"></i>
-                        <span>Create/Upload Lesson</span>
-                    </button>
-                    <button class="action-btn">
-                        <i class="bi bi-bar-chart"></i>
-                        <span>View Analytics</span>
-                    </button>
-                    <button class="action-btn">
-                        <i class="bi bi-people"></i>
-                        <span>Manage Students</span>
-                    </button>
-                </div>
-
-                <div class="section-card light-purple">
-                    <h2 class="section-title-tests mb-3">Tests</h2>
-                    <button class="action-btn">
-                        <i class="bi bi-plus-circle"></i>
-                        <span>Create Tests</span>
-                    </button>
-                    <button class="action-btn">
-                        <i class="bi bi-pencil-square"></i>
-                        <span>Manage Tests</span>
-                    </button>
-                </div>
-            </div>
+          <div class="pill-bottom">AI-powered tests</div>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function addCourse() {
-            alert('Add new course functionality would go here!');
-        }
-    </script>
+    <!-- FEATURED PROGRAMS -->
+    <section id="features" class="section section--light">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="section-title">Featured Programs</h3>
+        </div>
+
+        <div class="cards-grid featured-grid">
+          <article class="card">
+            <div class="card-illustration">
+              <!-- simple illustrative svg -->
+              <svg viewBox="0 0 120 80" width="120" height="80" aria-hidden="true">
+                <rect x="4" y="6" rx="6" ry="6" width="112" height="60" fill="#eef6ff"/>
+                <rect x="12" y="16" width="88" height="28" rx="4" fill="#fff"/>
+                <rect x="18" y="22" width="28" height="12" rx="2" fill="#d1e9ff"/>
+              </svg>
+            </div>
+            <h4>Smart Class Management</h4>
+            <p>Organize your classroom, automate attendance, and manage lesson plans with AI assistance.</p>
+            <ul class="card-list">
+              <li>Auto grading</li>
+              <li>Attendance tracking</li>
+              <li>Lesson scheduler</li>
+            </ul>
+            <a class="card-link" href="#">Learn more →</a>
+          </article>
+
+          <article class="card">
+            <div class="card-illustration">
+              <svg viewBox="0 0 120 80" width="120" height="80" aria-hidden="true">
+                <rect x="0" y="0" rx="12" ry="12" width="120" height="80" fill="#fff0ff"/>
+                <circle cx="90" cy="30" r="16" fill="#ffd6f0"/>
+                <rect x="12" y="46" width="84" height="12" rx="4" fill="#ffd6f0"/>
+              </svg>
+            </div>
+            <h4>Personalized Learning Paths</h4>
+            <p>Create adaptive learning journeys for each student based on strengths, weaknesses and pace.</p>
+            <ul class="card-list">
+              <li>Adaptive exercises</li>
+              <li>Progress insights</li>
+              <li>Custom goals</li>
+            </ul>
+            <a class="card-link" href="#">Learn more →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILT FOR EVERYONE -->
+    <section class="section">
+      <div class="container">
+        <h3 class="centered-h3">Built for every one</h3>
+        <p class="section-sub">Comprehensive solutions designed specifically for teachers, students, and schools.</p>
+
+        <div class="cards-grid three-grid">
+          <article class="card small">
+            <div class="card-illustration small-illus">
+              <svg viewBox="0 0 80 80" width="80" height="80" aria-hidden="true">
+                <rect x="6" y="6" rx="8" ry="8" width="68" height="68" fill="#eef7ff"/>
+                <path d="M18 50h44v4H18z" fill="#cde7ff"/>
+                <path d="M18 34h44v10H18z" fill="#fff"/>
+              </svg>
+            </div>
+            <h4>Teachers</h4>
+            <p>Streamline classroom management, auto grading and parent communication.</p>
+          </article>
+
+          <article class="card small">
+            <div class="card-illustration small-illus">
+              <svg viewBox="0 0 80 80" width="80" height="80" aria-hidden="true">
+                <rect x="6" y="6" rx="8" ry="8" width="68" height="68" fill="#fff0fb"/>
+                <circle cx="40" cy="36" r="14" fill="#ffdff6"/>
+                <rect x="26" y="56" width="28" height="8" rx="4" fill="#ffdff6"/>
+              </svg>
+            </div>
+            <h4>Students</h4>
+            <p>Engaging content, personalized paths and progress tracking to keep learners motivated.</p>
+          </article>
+
+          <article class="card small">
+            <div class="card-illustration small-illus">
+              <svg viewBox="0 0 80 80" width="80" height="80" aria-hidden="true">
+                <rect x="6" y="6" rx="8" ry="8" width="68" height="68" fill="#e6fff8"/>
+                <path d="M18 44h44v16H18z" fill="#d7fff0"/>
+                <path d="M24 50h8v6h-8zM48 50h8v6h-8z" fill="#bfffe0"/>
+              </svg>
+            </div>
+            <h4>Schools</h4>
+            <p>Scalable deployments, reporting and compliance features for institutions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section--contact">
+      <div class="container contact-grid">
+        <div class="contact-left">
+          <span class="eyebrow">Get in touch</span>
+          <h3>Ready to Transform</h3>
+          <p>Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+
+          <ul class="contact-info">
+            <li><strong>Email</strong><br>hello@shikshanet.com</li>
+            <li><strong>Phone</strong><br>+91 9876543210</li>
+            <li><strong>Socials</strong><br>Twitter · LinkedIn · FB</li>
+          </ul>
+        </div>
+
+        <form class="contact-form" action="#" method="post" onsubmit="event.preventDefault(); alert('Message sent (demo)')">
+          <label>
+            <span class="label-text">Name</span>
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+
+          <label>
+            <span class="label-text">Email</span>
+            <input type="email" name="email" placeholder="you@domain.com" required>
+          </label>
+
+          <label>
+            <span class="label-text">Message</span>
+            <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Send message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="brand small">
+        <h4>ShikshaNet</h4>
+        <p class="muted">© ShikshaNet all right reserved</p>
+      </div>
+      <div class="footer-links muted">
+        <a href="#">Privacy</a> · <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
