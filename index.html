@@ -6,7 +6,6 @@
   <title>Transform Education — AI Powered Learning</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <!-- Fallback to Inter / system sans if Geist isn't present -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="land.css">
@@ -14,7 +13,6 @@
 <body>
 <div class="scale-wrapper">
   <main>
-    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-left">
@@ -41,11 +39,6 @@
 
   <div class="hero-card-illustration" aria-hidden="true">
 
-    <!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.82/build/spline-viewer.js"></script>
-    <spline-viewer 
-      url="https://prod.spline.design/6eNMEsBAeQANy3dw/scene.splinecode"
-      style="width:100%; height:100%; border-radius:18px; display:block;"
-    ></spline-viewer> -->
   </div>
 
   <div class="pill-bottom">AI-powered tests</div>
@@ -53,7 +46,6 @@
 
     </section>
 
-    <!-- FEATURED PROGRAMS -->
     <section id="features" class="section section--light">
       <div class="container">
         <div class="section-header">
@@ -63,7 +55,6 @@
         <div class="cards-grid featured-grid">
           <article class="card">
             <div class="card-illustration">
-              <!-- simple illustrative svg -->
               <svg viewBox="0 0 120 80" width="120" height="80" aria-hidden="true">
                 <rect x="4" y="6" rx="6" ry="6" width="112" height="60" fill="#eef6ff"/>
                 <rect x="12" y="16" width="88" height="28" rx="4" fill="#fff"/>
@@ -197,134 +188,203 @@
     </div>
   </footer>
 </div>
-  <!-- Popup Modal -->
 <div id="popupModal" class="popup-modal">
   <div class="popup-content">
     <span class="close-btn">&times;</span>
     <div class="popup-inner"></div>
   </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const modal = document.getElementById("popupModal");
-  const popupContent = document.querySelector(".popup-inner");
-  const closeBtn = document.querySelector(".close-btn");
-  const body = document.body; 
+  const modal = document.getElementById("popupModal");
+  const popupContent = document.querySelector(".popup-inner");
+  const closeBtn = document.querySelector(".close-btn");
+  const body = document.body; 
 
-  const openModal = (card) => {
-    popupContent.innerHTML = card.innerHTML;
-    modal.classList.add("active");
-    body.classList.add("modal-open"); 
-  };
+  const openModal = (card) => {
+    popupContent.innerHTML = card.innerHTML;
+    modal.classList.add("active");
+    body.classList.add("modal-open"); 
+  };
 
-  const closeModal = () => {
-    modal.classList.remove("active");
-    body.classList.remove("modal-open"); 
+  const closeModal = () => {
+    modal.classList.remove("active");
+    body.classList.remove("modal-open"); 
 
-    setTimeout(() => {
-      popupContent.innerHTML = '';
-    }, 300); 
-  };
+    setTimeout(() => {
+      popupContent.innerHTML = '';
+    }, 300); 
+  };
 
+  document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", () => {
+      openModal(card);
+    });
+  });
 
+  closeBtn.addEventListener("click", closeModal);
 
-  document.querySelectorAll(".card").forEach(card => {
-    card.addEventListener("click", () => {
-      openModal(card);
-    });
-  });
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
 
-  closeBtn.addEventListener("click", closeModal);
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      closeModal();
-    }
-  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
 });
 document.addEventListener("DOMContentLoaded", function(){
-const modal = document.getElementById("popupModal");
-const popupContent = document.querySelector(".popup-inner");
-const closeBtn = document.querySelector(".close-btn");
-const body = document.body;
+  const modal = document.getElementById("popupModal");
+  const popupContent = document.querySelector(".popup-inner");
+  const closeBtn = document.querySelector(".close-btn");
+  const body = document.body;
 
-const closeModal = () => {
-modal.classList.remove("active");
-body.classList.remove("modal-open");
-setTimeout(() => {
-popupContent.innerHTML = '';
-}, 300);
-};
+  const closeModal = () => {
+    modal.classList.remove("active");
+    body.classList.remove("modal-open");
+    setTimeout(() => {
+      popupContent.innerHTML = '';
+    }, 300);
+  };
 
-document.querySelectorAll(".card").forEach(card => {
-card.addEventListener("click", () => {
-popupContent.innerHTML = card.innerHTML;
-modal.classList.add("active");
-body.classList.add("modal-open");
-});
-});
+  document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", () => {
+      popupContent.innerHTML = card.innerHTML;
+      modal.classList.add("active");
+      body.classList.add("modal-open");
+    });
+  });
 
-closeBtn.addEventListener("click", closeModal);
+  closeBtn.addEventListener("click", closeModal);
 
-modal.addEventListener("click", (e) => {
-if (e.target === modal) {
-closeModal();
-}
-});
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
 
-document.addEventListener('keydown', (e) => {
-if (e.key === 'Escape' && modal.classList.contains('active')) {
-closeModal();
-}
-});
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
 
-const counters = document.querySelectorAll('.count-up');
-const duration = 2000;
+  const counters = document.querySelectorAll('.count-up');
+  const duration = 2000;
 
-const startCounter = (counter) => {
-const target = +counter.getAttribute('data-target');
-if (+counter.textContent.replace('+', '') === target) return;
-let startTime = null;
+  const startCounter = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    if (+counter.textContent.replace('+', '') === target) return;
+    let startTime = null;
 
-const step = (timestamp) => {
-if (!startTime) startTime = timestamp;
-const progress = timestamp - startTime;
-const elapsed = Math.min(progress / duration, 1);
-const value = Math.floor(elapsed * target);
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const elapsed = Math.min(progress / duration, 1);
+      const value = Math.floor(elapsed * target);
 
-counter.textContent = value + (elapsed === 1 ? '+' : '');
+      counter.textContent = value + (elapsed === 1 ? '+' : '');
 
-if (elapsed < 1) {
-requestAnimationFrame(step);
-} else {
-counter.textContent = target + '+';
-}
-};
+      if (elapsed < 1) {
+        requestAnimationFrame(step);
+      } else {
+        counter.textContent = target + '+';
+      }
+    };
 
-requestAnimationFrame(step);
-};
+    requestAnimationFrame(step);
+  };
 
-const observer = new IntersectionObserver((entries, observer) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.querySelectorAll('.count-up').forEach(startCounter);
-observer.unobserve(entry.target);
-}
-});
-}, {
-threshold: 0.5
-});
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.count-up').forEach(startCounter);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
 
-const heroStatsSection = document.querySelector('.hero-left');
-if (heroStatsSection) {
-observer.observe(heroStatsSection);
-}
+  const heroStatsSection = document.querySelector('.hero-left');
+  if (heroStatsSection) {
+    observer.observe(heroStatsSection);
+  }
+  
+  gsap.registerPlugin(ScrollTrigger);
+
+
+  gsap.from(".hero-left > *", {
+    opacity: 0,
+    y: 30,
+    stagger: 0.15,
+    duration: 0.8,
+    ease: "power2.out"
+  });
+
+  gsap.from(".hero-right", {
+    opacity: 0,
+    scale: 0.9,
+    duration: 0.8,
+    delay: 0.5,
+    ease: "power2.out"
+  });
+
+
+  gsap.from(".featured-grid .card", {
+    opacity: 0,
+    y: 50,
+    stagger: 0.2,
+    duration: 0.8,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#features .section-header",
+      start: "top 80%",
+      toggleActions: "play none none none"
+    }
+  });
+
+  gsap.from(".three-grid .card", {
+    opacity: 0,
+    y: 50,
+    stagger: 0.15,
+    duration: 0.8,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".centered-h3",
+      start: "top 80%",
+      toggleActions: "play none none none"
+    }
+  });
+
+  gsap.from(".contact-left", {
+    opacity: 0,
+    x: -50,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#contact",
+      start: "top 75%",
+      toggleActions: "play none none none"
+    }
+  });
+
+  gsap.from(".contact-form", {
+    opacity: 0,
+    x: 50,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#contact",
+      start: "top 75%",
+      toggleActions: "play none none none"
+    }
+  });
 });
 </script>
 
