@@ -12,49 +12,45 @@
   <link rel="stylesheet" href="land.css">
 </head>
 <body>
-
+<div class="scale-wrapper">
   <main>
     <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-left">
           <div class="eyebrow">Future of Education</div>
-          <h2 class="hero-title">Transform Education with AI-Powered Learning</h2>
+          <h2 class="hero-title">Transform Education with <span class="purple-txt">AI-Powered Learning</span></h2>
           <p class="hero-desc">
             Connect teachers and students seamlessly. Manage classes, assignments, and progress with cutting-edge AI tools tailored for modern education.
           </p>
 
           <div class="hero-cta">
-            <a class="btn primary" href="#contact">Get started →</a>
-            <a class="btn ghost" href="dash.html">Login</a>
+            <a class="btn primary" href="signup.html">Get started →</a>
+            <a class="btn ghost" href="login.html">Login</a>
           </div>
 
-          <ul class="stats">
-            <li><strong>67+</strong><span>active schools</span></li>
-            <li><strong>50+</strong><span>courses created</span></li>
-            <li><strong>50+</strong><span>schools enrolled</span></li>
-          </ul>
+<ul class="stats">
+            <li><strong class="count-up" data-target="67">0</strong><span>active schools</span></li>
+            <li><strong class="count-up" data-target="50">0</strong><span>courses created</span></li>
+            <li><strong class="count-up" data-target="50">0</strong><span>schools enrolled</span></li>
+          </ul>
         </div>
 
-        <div class="hero-right">
-          <div class="badge top-right">Interactive learning</div>
+<div class="hero-right">
+  <div class="badge top-right">Interactive learning</div>
 
-          <div class="hero-card-illustration" aria-hidden="true">
-\
-            <svg viewBox="0 0 600 380" class="illus-svg" preserveAspectRatio="xMidYMid meet">
-              <defs>
-                <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
-                  <stop offset="0" stop-color="#f3f4ff"/>
-                  <stop offset="1" stop-color="#e6fff8"/>
-                </linearGradient>
-              </defs>
-              <rect x="0" y="0" rx="18" ry="18" width="100%" height="100%" fill="url(#g1)"></rect>
-            </svg>
-          </div>
+  <div class="hero-card-illustration" aria-hidden="true">
 
-          <div class="pill-bottom">AI-powered tests</div>
-        </div>
-      </div>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.82/build/spline-viewer.js"></script>
+    <spline-viewer 
+      url="https://prod.spline.design/6eNMEsBAeQANy3dw/scene.splinecode"
+      style="width:100%; height:100%; border-radius:18px; display:block;"
+    ></spline-viewer>
+  </div>
+
+  <div class="pill-bottom">AI-powered tests</div>
+</div>
+
     </section>
 
     <!-- FEATURED PROGRAMS -->
@@ -200,6 +196,137 @@
       </div>
     </div>
   </footer>
+</div>
+  <!-- Popup Modal -->
+<div id="popupModal" class="popup-modal">
+  <div class="popup-content">
+    <span class="close-btn">&times;</span>
+    <div class="popup-inner"></div>
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const modal = document.getElementById("popupModal");
+  const popupContent = document.querySelector(".popup-inner");
+  const closeBtn = document.querySelector(".close-btn");
+  const body = document.body; 
+
+  const openModal = (card) => {
+    popupContent.innerHTML = card.innerHTML;
+    modal.classList.add("active");
+    body.classList.add("modal-open"); 
+  };
+
+  const closeModal = () => {
+    modal.classList.remove("active");
+    body.classList.remove("modal-open"); 
+
+    setTimeout(() => {
+      popupContent.innerHTML = '';
+    }, 300); 
+  };
+
+
+
+  document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", () => {
+      openModal(card);
+    });
+  });
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+});
+document.addEventListener("DOMContentLoaded", function(){
+const modal = document.getElementById("popupModal");
+const popupContent = document.querySelector(".popup-inner");
+const closeBtn = document.querySelector(".close-btn");
+const body = document.body;
+
+const closeModal = () => {
+modal.classList.remove("active");
+body.classList.remove("modal-open");
+setTimeout(() => {
+popupContent.innerHTML = '';
+}, 300);
+};
+
+document.querySelectorAll(".card").forEach(card => {
+card.addEventListener("click", () => {
+popupContent.innerHTML = card.innerHTML;
+modal.classList.add("active");
+body.classList.add("modal-open");
+});
+});
+
+closeBtn.addEventListener("click", closeModal);
+
+modal.addEventListener("click", (e) => {
+if (e.target === modal) {
+closeModal();
+}
+});
+
+document.addEventListener('keydown', (e) => {
+if (e.key === 'Escape' && modal.classList.contains('active')) {
+closeModal();
+}
+});
+
+const counters = document.querySelectorAll('.count-up');
+const duration = 2000;
+
+const startCounter = (counter) => {
+const target = +counter.getAttribute('data-target');
+if (+counter.textContent.replace('+', '') === target) return;
+let startTime = null;
+
+const step = (timestamp) => {
+if (!startTime) startTime = timestamp;
+const progress = timestamp - startTime;
+const elapsed = Math.min(progress / duration, 1);
+const value = Math.floor(elapsed * target);
+
+counter.textContent = value + (elapsed === 1 ? '+' : '');
+
+if (elapsed < 1) {
+requestAnimationFrame(step);
+} else {
+counter.textContent = target + '+';
+}
+};
+
+requestAnimationFrame(step);
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.querySelectorAll('.count-up').forEach(startCounter);
+observer.unobserve(entry.target);
+}
+});
+}, {
+threshold: 0.5
+});
+
+const heroStatsSection = document.querySelector('.hero-left');
+if (heroStatsSection) {
+observer.observe(heroStatsSection);
+}
+});
+</script>
 
 </body>
 </html>
