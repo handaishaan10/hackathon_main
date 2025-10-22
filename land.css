@@ -33,7 +33,11 @@
 
 html, body {
   height: 100%;
-  overflow-y: hidden;
+  overflow-y: auto;
+}
+html {
+  scroll-behavior: smooth;
+
 }
 
 body {
@@ -45,8 +49,11 @@ body {
   color: #0f172a;
   line-height: 1.6;
   font-size: 18px;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
+overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+
+
+  overflow-y: auto;
 }
 
 .container {
@@ -243,7 +250,7 @@ body {
 .section {
   min-height: 100vh;
   padding: 120px 0;
-  scroll-snap-align: start;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -265,7 +272,7 @@ body {
   border-radius: 20px;
   border: 1px solid black;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 30px;
   color: #04398E;
   width: 500px;
 }
