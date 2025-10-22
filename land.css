@@ -1,4 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist&family=Space+Grotesk:wght@300..700&display=swap');
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("fonts/SFProDisplay-Regular.woff2") format("woff2"),
+       url("fonts/SFProDisplay-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Optional: controls how font loads */
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("fonts/SFProDisplay-Bold.woff2") format("woff2"),
+       url("fonts/SFProDisplay-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --bg: #f8fbfc;
@@ -14,7 +30,7 @@
   --shadow-1: 0 14px 42px rgba(30,40,60,0.12);
   --shadow-2: 0 10px 30px rgba(30,40,60,0.1);
   --container: 1250px;
-  font-family: "Geist", sans-serif;
+  font-family: "SF Pro Display", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -343,15 +359,19 @@ overflow-x: hidden;
 .centered-h3 {
   text-align: center;
   margin: 15px 0 18px;
-  font-size: 34px;
+  font-size: 50px;
+  font-weight: 549;
+
 }
 
 .section-sub {
   text-align: center;
   color: var(--muted);
-  max-width: 850px;
+  max-width: 680px;
   margin: 0 auto 35px;
   font-size: 21px;
+  margin-bottom: 100px;
+ 
 }
 
 .section--contact {
@@ -372,15 +392,22 @@ overflow-x: hidden;
 }
 
 .contact-left .eyebrow {
-  display: inline-block;
-  color: var(--muted);
-  font-weight: 700;
-  font-size: 18px;
+  text-align: center;
+ display: inline-block;
+  color: #04398E;
+  font-weight: 600;
+  font-size: 24px;
+  border: 1px solid black;
+  width: 250px;
+  border-radius: 15px;
+  margin-left: -150px;
 }
 
 .contact-left h3 {
-  margin: 20px 0 25px;
-  font-size: 38px;
+  margin: 20px;
+  margin-left: -150px;
+  font-size: 68px;
+  font-weight: 500;
 }
 
 .contact-info {
@@ -388,7 +415,7 @@ overflow-x: hidden;
   padding: 0;
   margin: 35px 0 0;
   color: var(--muted);
-  font-size: 19px;
+  font-size: 30px;
 }
 
 .contact-form {
@@ -462,6 +489,16 @@ overflow-x: hidden;
 }
 
 @media (max-width:900px) {
+  .contact-left h3{
+    margin-left: 70px;
+    font-size: 40px;
+
+  }
+  .contact-left .eyebrow {
+    margin-left: 70px;
+    font-size: 20px;
+    width: 200px;
+  }
   .hero-grid { grid-template-columns: 1fr; gap: 30px; }
   .hero-right { order: 2; }
   .featured-grid { grid-template-columns: 1fr; }
