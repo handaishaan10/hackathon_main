@@ -164,20 +164,33 @@ overflow-x: hidden;
   gap: 60px;
   align-items: start;
 }
-
 .hero-left .eyebrow {
-  color: var(--muted);
-  font-weight: 700;
+  position: relative;
+  color: black;
+  width: 200px;
+  text-align: center;
+  font-weight: 600;
   margin-bottom: 16px;
   display: inline-block;
   font-size: 17px;
+  border: 1px solid #007BB8;
+  border-radius: 999px;
+  overflow: hidden;
 }
 
+.hero-left .eyebrow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #0896DD, #7A6EFF);
+  opacity: 0.2; 
+  z-index: -1;  
+}
 .hero-title {
   margin: 0 0 24px;
   font-size: 60px;
   line-height: 1.05;
-  max-width: 850px;
+  max-width: 800px;
 }
 
 .hero-desc {
