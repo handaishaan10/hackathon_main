@@ -7,6 +7,10 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
 
   <link rel="stylesheet" href="land.css">
 </head>
@@ -133,11 +137,36 @@
           <h3>Ready to Transform</h3>
           <p>Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
 
-          <ul class="contact-info">
-            <li><strong>Email</strong><br>hello@shikshanet.com</li>
-            <li><strong>Phone</strong><br>+91 9876543210</li>
-            <li><strong>Socials</strong><br>Twitter · LinkedIn · FB</li>
-          </ul>
+      <ul class="contact-info">
+  <li>
+    <div class="icon"><i class="fa-regular fa-envelope"></i></div>
+    <div class="details">
+      <strong>Email</strong>
+      <p>abhirajnarayan26@gmail.com</p>
+    </div>
+  </li>
+
+  <li>
+    <div class="icon"><i class="fa-regular fa-phone"></i></div>
+    <div class="details">
+      <strong>Phone</strong>
+      <p>(+91) 0987654321</p>
+    </div>
+  </li>
+
+  <li>
+    <div class="icon"><i class="fa-regular fa-user-group"></i></div>
+    <div class="details">
+      <strong>Socials</strong>
+      <div class="social-icons">
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+        <i class="fa-brands fa-linkedin"></i>
+      </div>
+    </div>
+  </li>
+</ul>
+
         </div>
 
         <form class="contact-form" action="#" method="post" onsubmit="event.preventDefault(); alert('Message sent (demo)')">
@@ -157,7 +186,7 @@
           </label>
 
           <div class="form-actions">
-            <button class="btn primary" type="submit">Send message</button>
+            <button class="submit-btn" type="submit">Send message</button>
           </div>
         </form>
       </div>
