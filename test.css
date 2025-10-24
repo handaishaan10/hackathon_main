@@ -123,6 +123,7 @@ body {
 
 .card-header-content {
   flex: 1;
+  
 }
 
 .card-title {
@@ -141,6 +142,7 @@ body {
 }
 
 .form {
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -370,6 +372,134 @@ body {
   color: #737373;
 }
 
+/* --- Assign Tab Styles --- */
+.assign-card-title {
+    font-size: 16px; 
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.assign-card .card-header {
+    margin-bottom: 0px; 
+}
+
+.test-file-info {
+    margin-top: -8px; 
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.file-uploaded-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #e5e5e5;
+    border-radius: 15px;
+    background-color: #ffffff;
+    width: 50%; 
+}
+
+.file-name-display {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.student-selection-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 16px; 
+}
+
+.student-selection-instruction {
+    font-size: 14px;
+    color: #737373;
+    margin-bottom: 8px;
+}
+
+.select-all-wrapper {
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #000000;
+    margin-top: -48px; 
+}
+
+.select-all-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: #000000;
+    border-radius: 4px;
+}
+
+.students-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.student-item {
+    display: flex;
+    align-items: center;
+    background-color: #FBF9F7; 
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid #FBF9F7;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.student-item.selected {
+    background-color: #F0FAF6; 
+    border-color: #10B981; 
+}
+
+.student-checkbox {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-right: 12px;
+ 
+    accent-color: #10B981; 
+    border-color: #e5e5e5;
+}
+
+.student-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.student-name {
+    font-weight: 500;
+    margin-right: auto;
+}
+
+.student-contact {
+    font-size: 12px;
+    color: #737373;
+}
+
+.checked-icon {
+
+    margin-left: 12px;
+    display: none; 
+    flex-shrink: 0;
+}
+
+.student-item.selected .checked-icon {
+    display: block; 
+}
+
+
+
 @media (max-width: 768px) {
   .header-left {
     gap: 24px;
@@ -385,5 +515,9 @@ body {
 
   .tabs {
     max-width: 100%;
+  }
+
+  .file-uploaded-wrapper {
+      width: 100%;
   }
 }
