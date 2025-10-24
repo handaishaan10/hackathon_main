@@ -38,12 +38,12 @@
             </div>
 
             <div class="tabs">
-                <button class="tab-button" data-tab="create">Create</button>
+                <button class="tab-button active" data-tab="create">Create</button>
                 <button class="tab-button" data-tab="upload">Upload</button>
-                <button class="tab-button active" data-tab="assign">Assign</button>
+                <button class="tab-button" data-tab="assign">Assign</button>
             </div>
 
-            <div id="create-tab" class="tab-content">
+            <div id="create-tab" class="tab-content active">
                 <div class="card">
                     <div class="form-steps-container">
                         <div id="step-1" class="form-step active">
@@ -161,7 +161,7 @@
                 </div>
             </div>
 
-            <div id="assign-tab" class="tab-content active">
+            <div id="assign-tab" class="tab-content">
                 <div class="card assign-card">
                     <div class="card-header">
                         <div class="card-header-content">
@@ -345,7 +345,6 @@
                 });
             });
 
-          
             const selectAllCheckbox = document.getElementById('select-all');
             const studentCheckboxes = document.querySelectorAll('.student-checkbox');
 
@@ -361,7 +360,6 @@
             studentCheckboxes.forEach(checkbox => {
                 checkbox.addEventListener('change', function() {
                     updateStudentItemStyle(this);
-             
                     const allChecked = Array.from(studentCheckboxes).every(cb => cb.checked);
                     const someChecked = Array.from(studentCheckboxes).some(cb => cb.checked);
 
@@ -375,7 +373,6 @@
 
             function updateStudentItemStyle(checkbox) {
                 const studentItem = checkbox.closest('.student-item');
-           
                 if (checkbox.checked) {
                     studentItem.classList.add('selected');
                 } else {
