@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Doubts</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="doubts.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Doubts</title>
+    <link rel="stylesheet" href="doubts.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="studentdash.html">Logo</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="class.html">Classes</a></li>
-          <li class="nav-item"><a class="nav-link" href="test.html">Tests</a></li>
-          <li class="nav-item"><a class="nav-link" href="yt.html">Learn</a></li>
-        </ul>
-        <div class="profile-section">
-          <span>ParinCutie</span>
-          <div class="profile-icon"></div>
+    <nav class="navbar">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="navbar-brand">Logo</div>
+                <div style="display: flex; align-items: center; gap: 2rem;">
+                    <a href="#" class="nav-link">Home</a>
+                    <a href="#" class="nav-link">Classes</a>
+                    <a href="#" class="nav-link">Test</a>
+                    <a href="#" class="nav-link">Learn</a>
+                    <div class="profile-section">
+                        <span>abhirajgoat</span>
+                        <div class="profile-icon"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
-    <main class="main">
+    <main class="main" id="mainContent">
         <div class="container">
             <div class="page-header">
                 <h1 class="page-title">Student Doubts</h1>
@@ -37,23 +33,27 @@
             </div>
 
             <div class="doubt-stats-container">
-         
                 <div class="stat-card orange-border">
                     <div class="stat-card-header">
                         <span class="stat-label">Pending</span>
                         <div class="icon-placeholder orange-bg">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
                         </div>
                     </div>
                     <div class="stat-value">6</div>
                 </div>
 
-             
                 <div class="stat-card orange-border">
                     <div class="stat-card-header">
                         <span class="stat-label">In Progress</span>
                         <div class="icon-placeholder orange-bg">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"></path><path d="M15 3h6v6"></path><path d="M21 3L15 9"></path><path d="M21 15v6h-6"></path><path d="M18 21L12 15"></path><path d="M9 21H3v-6"></path><path d="M3 9v-6h6"></path><path d="M9 3L3 9"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
                         </div>
                     </div>
                     <div class="stat-value">3</div>
@@ -63,186 +63,254 @@
                     <div class="stat-card-header">
                         <span class="stat-label">resolved</span>
                         <div class="icon-placeholder green-bg">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17L4 12"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
                         </div>
                     </div>
                     <div class="stat-value">4</div>
                 </div>
             </div>
 
-        
             <div class="doubts-list-container">
-          
-                <div class="doubt-item">
+                <div class="doubt-item in-progress-item" data-doubt-id="1">
                     <div class="doubt-content">
                         <h3 class="doubt-title">Quadratic Equations</h3>
                         <p class="doubt-text">I am having trouble solving this specific problem involving factoring quadratics.</p>
                         <div class="doubt-meta">
-                            <span class="meta-label">Student:</span><span class="meta-value">Parin Goat</span>
-                            <span class="meta-label">Class:</span><span class="meta-value">10-A</span>
-                            <span class="meta-label">Subject:</span><span class="meta-value">Math</span>
+                            <span class="meta-label">Student:</span>
+                            <span class="meta-value">Rahul Sharma</span>
+                            <span class="meta-label">Class:</span>
+                            <span class="meta-value">10th - Mathematics</span>
                         </div>
                     </div>
                     <div class="doubt-actions">
                         <span class="status-tag pending-tag">Pending</span>
-                        <button class="btn view-details-btn">View Details</button>
+                        <button class="view-details-btn" onclick="openModal(1)">View Details</button>
                     </div>
                 </div>
 
-           
-                <div class="doubt-item">
+                <div class="doubt-item in-progress-item" data-doubt-id="2">
                     <div class="doubt-content">
                         <h3 class="doubt-title">Photosynthesis Process</h3>
                         <p class="doubt-text">Could you explain the difference between light-dependent and light-independent reactions?</p>
                         <div class="doubt-meta">
-                            <span class="meta-label">Student:</span><span class="meta-value">Rajesh Sharma</span>
-                            <span class="meta-label">Class:</span><span class="meta-value">09-B</span>
-                            <span class="meta-label">Subject:</span><span class="meta-value">Science</span>
+                            <span class="meta-label">Student:</span>
+                            <span class="meta-value">Priya Patel</span>
+                            <span class="meta-label">Class:</span>
+                            <span class="meta-value">9th - Biology</span>
                         </div>
                     </div>
                     <div class="doubt-actions">
                         <span class="status-tag pending-tag">Pending</span>
-                        <button class="btn view-details-btn">View Details</button>
+                        <button class="view-details-btn" onclick="openModal(2)">View Details</button>
                     </div>
                 </div>
 
-             
-                <div class="doubt-item in-progress-item">
+                <div class="doubt-item in-progress-item" data-doubt-id="3">
                     <div class="doubt-content">
                         <h3 class="doubt-title">History of Mughal Empire</h3>
                         <p class="doubt-text">I need help understanding Akbar's administrative reforms and their impact.</p>
                         <div class="doubt-meta">
-                            <span class="meta-label">Student:</span><span class="meta-value">Neha Singh</span>
-                            <span class="meta-label">Class:</span><span class="meta-value">11-C</span>
-                            <span class="meta-label">Subject:</span><span class="meta-value">History</span>
+                            <span class="meta-label">Student:</span>
+                            <span class="meta-value">Aarav Singh</span>
+                            <span class="meta-label">Class:</span>
+                            <span class="meta-value">8th - History</span>
                         </div>
                     </div>
                     <div class="doubt-actions">
                         <span class="status-tag in-progress-tag">In Progress</span>
-                        <button class="btn view-details-btn">View Details</button>
+                        <button class="view-details-btn" onclick="openModal(3)">View Details</button>
                     </div>
                 </div>
-        
-                <div class="doubt-item in-progress-item">
+
+                <div class="doubt-item in-progress-item" data-doubt-id="4">
                     <div class="doubt-content">
                         <h3 class="doubt-title">Grammar: Active/Passive Voice</h3>
                         <p class="doubt-text">How do I correctly convert complex sentences from active to passive voice?</p>
                         <div class="doubt-meta">
-                            <span class="meta-label">Student:</span><span class="meta-value">Rahul Verma</span>
-                            <span class="meta-label">Class:</span><span class="meta-value">08-A</span>
-                            <span class="meta-label">Subject:</span><span class="meta-value">English</span>
+                            <span class="meta-label">Student:</span>
+                            <span class="meta-value">Ananya Reddy</span>
+                            <span class="meta-label">Class:</span>
+                            <span class="meta-value">7th - English</span>
                         </div>
                     </div>
                     <div class="doubt-actions">
                         <span class="status-tag in-progress-tag">In Progress</span>
-                        <button class="btn view-details-btn">View Details</button>
+                        <button class="view-details-btn" onclick="openModal(4)">View Details</button>
                     </div>
                 </div>
-                
-            
-                <div class="doubt-item resolved-item">
+
+                <div class="doubt-item resolved-item" data-doubt-id="5">
                     <div class="doubt-content">
                         <h3 class="doubt-title">Kinematics Formulas</h3>
                         <p class="doubt-text">Need a recap on the three basic equations of motion and when to use each one.</p>
                         <div class="doubt-meta">
-                            <span class="meta-label">Student:</span><span class="meta-value">Anjali Rao</span>
-                            <span class="meta-label">Class:</span><span class="meta-value">11-B</span>
-                            <span class="meta-label">Subject:</span><span class="meta-value">Physics</span>
+                            <span class="meta-label">Student:</span>
+                            <span class="meta-value">Karan Mehta</span>
+                            <span class="meta-label">Class:</span>
+                            <span class="meta-value">11th - Physics</span>
                         </div>
                     </div>
                     <div class="doubt-actions">
                         <span class="status-tag resolved-tag">Resolved</span>
-                        <button class="btn view-details-btn">View Details</button>
+                        <button class="view-details-btn" onclick="openModal(5)">View Details</button>
                     </div>
                 </div>
 
-    
-                <div class="doubt-item">
+                <div class="doubt-item in-progress-item" data-doubt-id="6">
                     <div class="doubt-content">
                         <h3 class="doubt-title">Chemical Bonding</h3>
                         <p class="doubt-text">What is the main difference between an ionic and a covalent bond?</p>
                         <div class="doubt-meta">
-                            <span class="meta-label">Student:</span><span class="meta-value">Karan Gill</span>
-                            <span class="meta-label">Class:</span><span class="meta-value">10-C</span>
-                            <span class="meta-label">Subject:</span><span class="meta-value">Chemistry</span>
+                            <span class="meta-label">Student:</span>
+                            <span class="meta-value">Sneha Kapoor</span>
+                            <span class="meta-label">Class:</span>
+                            <span class="meta-value">10th - Chemistry</span>
                         </div>
                     </div>
                     <div class="doubt-actions">
                         <span class="status-tag pending-tag">Pending</span>
-                        <button class="btn view-details-btn">View Details</button>
+                        <button class="view-details-btn" onclick="openModal(6)">View Details</button>
                     </div>
                 </div>
 
-   
-                <div class="doubt-item">
-                    <div class="doubt-content">
-                        <h3 class="doubt-title">Poetry Analysis</h3>
-                        <p class="doubt-text">Having difficulty interpreting the symbolism in the poem "The Road Not Taken."</p>
-                        <div class="doubt-meta">
-                            <span class="meta-label">Student:</span><span class="meta-value">Priya Iyer</span>
-                            <span class="meta-label">Class:</span><span class="meta-value">12-A</span>
-                            <span class="meta-label">Subject:</span><span class="meta-value">English</span>
-                        </div>
-                    </div>
-                    <div class="doubt-actions">
-                        <span class="status-tag pending-tag">Pending</span>
-                        <button class="btn view-details-btn">View Details</button>
-                    </div>
-                </div>
-
-                <div class="doubt-item in-progress-item">
-                    <div class="doubt-content">
-                        <h3 class="doubt-title">Demand and Supply Curves</h3>
-                        <p class="doubt-text">What factors cause a shift in the supply curve versus a movement along it?</p>
-                        <div class="doubt-meta">
-                            <span class="meta-label">Student:</span><span class="meta-value">Amit Joshi</span>
-                            <span class="meta-label">Class:</span><span class="meta-value">12-C</span>
-                            <span class="meta-label">Subject:</span><span class="meta-value">Economics</span>
-                        </div>
-                    </div>
-                    <div class="doubt-actions">
-                        <span class="status-tag in-progress-tag">In Progress</span>
-                        <button class="btn view-details-btn">View Details</button>
-                    </div>
-                </div>
-
-       
-                <div class="doubt-item resolved-item">
+                <div class="doubt-item resolved-item" data-doubt-id="7">
                     <div class="doubt-content">
                         <h3 class="doubt-title">Linear Programming</h3>
                         <p class="doubt-text">I need an example of a simple two-variable optimization problem.</p>
                         <div class="doubt-meta">
-                            <span class="meta-label">Student:</span><span class="meta-value">Sana Khan</span>
-                            <span class="meta-label">Class:</span><span class="meta-value">12-B</span>
-                            <span class="meta-label">Subject:</span><span class="meta-value">Math</span>
+                            <span class="meta-label">Student:</span>
+                            <span class="meta-value">Vikram Gupta</span>
+                            <span class="meta-label">Class:</span>
+                            <span class="meta-value">12th - Mathematics</span>
                         </div>
                     </div>
                     <div class="doubt-actions">
                         <span class="status-tag resolved-tag">Resolved</span>
-                        <button class="btn view-details-btn">View Details</button>
+                        <button class="view-details-btn" onclick="openModal(7)">View Details</button>
                     </div>
                 </div>
-
-       
-                <div class="doubt-item">
-                    <div class="doubt-content">
-                        <h3 class="doubt-title">Cell Division: Mitosis/Meiosis</h3>
-                        <p class="doubt-text">Can you clarify the steps involved in Meiosis II?</p>
-                        <div class="doubt-meta">
-                            <span class="meta-label">Student:</span><span class="meta-value">Vikram Reddy</span>
-                            <span class="meta-label">Class:</span><span class="meta-value">11-A</span>
-                            <span class="meta-label">Subject:</span><span class="meta-value">Biology</span>
-                        </div>
-                    </div>
-                    <div class="doubt-actions">
-                        <span class="status-tag pending-tag">Pending</span>
-                        <button class="btn view-details-btn">View Details</button>
-                    </div>
-                </div>
-
             </div>
-
         </div>
     </main>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-dialog" id="modalDialog">
+            <div class="modal-header">
+                <h2 id="modal-title">Doubt Details</h2>
+                <button class="close-btn" onclick="closeModal()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="student-info-row">
+                    <div class="student-info">
+                        <span class="info-label-inline">Student:</span>
+                        <span class="info-value-inline" id="modal-student">Rahul Sharma</span>
+                    </div>
+                    <div class="class-info">
+                        <span class="info-label-inline">Class:</span>
+                        <span class="info-value-inline" id="modal-class">10th</span>
+                    </div>
+                </div>
+
+                <div class="subject-section">
+                    <span class="subject-label">Subject:</span>
+                    <span class="subject-value" id="modal-subject">Mathematics</span>
+                </div>
+
+                <div class="description-card">
+                    <span class="description-label">Question:</span>
+                    <p class="description-text" id="modal-question">
+                        I am having trouble solving this specific problem involving factoring quadratics.
+                    </p>
+                </div>
+                <div class="line-div"></div>
+                <div class="reply-section">
+                    <label class="reply-label" for="replyInput">Your Reply</label>
+                    <textarea 
+                        class="reply-input" 
+                        id="replyInput" 
+                        placeholder="Type your response here..."
+                    ></textarea>
+                </div>
+
+                <button class="send-reply-btn" onclick="sendReply()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                    Send Reply
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const doubtsData = {
+            1: { student: "Rahul Sharma", class: "10th", subject: "Mathematics", question: "I am having trouble solving this specific problem involving factoring quadratics." },
+            2: { student: "Priya Patel", class: "9th", subject: "Biology", question: "Could you explain the difference between light-dependent and light-independent reactions?" },
+            3: { student: "Aarav Singh", class: "8th", subject: "History", question: "I need help understanding Akbar's administrative reforms and their impact." },
+            4: { student: "Ananya Reddy", class: "7th", subject: "English", question: "How do I correctly convert complex sentences from active to passive voice?" },
+            5: { student: "Karan Mehta", class: "11th", subject: "Physics", question: "Need a recap on the three basic equations of motion and when to use each one." },
+            6: { student: "Sneha Kapoor", class: "10th", subject: "Chemistry", question: "What is the main difference between an ionic and a covalent bond?" },
+            7: { student: "Vikram Gupta", class: "12th", subject: "Mathematics", question: "I need an example of a simple two-variable optimization problem." }
+        };
+
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalDialog = document.getElementById('modalDialog');
+        const mainContent = document.getElementById('mainContent');
+
+        function openModal(doubtId) {
+            const doubt = doubtsData[doubtId];
+            if (doubt) {
+                document.getElementById('modal-student').textContent = doubt.student;
+                document.getElementById('modal-class').textContent = doubt.class;
+                document.getElementById('modal-subject').textContent = doubt.subject;
+                document.getElementById('modal-question').textContent = doubt.question;
+                document.getElementById('replyInput').value = '';
+                
+                modalOverlay.style.display = 'flex';
+                mainContent.classList.add('blurred');
+            }
+        }
+
+        function closeModal() {
+            modalOverlay.style.display = 'none';
+            mainContent.classList.remove('blurred');
+        }
+
+        modalOverlay.addEventListener('click', function(event) {
+   
+            if (event.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        modalDialog.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+
+        function sendReply() {
+            const reply = document.getElementById('replyInput').value.trim();
+            if (reply) {
+                alert('Reply sent: ' + reply);
+                closeModal();
+            } else {
+                alert('Please enter a reply before sending.');
+            }
+        }
+
+   
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modalOverlay.style.display === 'flex') {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
