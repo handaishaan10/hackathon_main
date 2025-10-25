@@ -1,0 +1,49 @@
+/* Add these rules to your test.css file or a dedicated courses.css file */
+
+/* --- Courses Page Specific Layout --- */
+.assign-course-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 900px; /* Matches the visual design width */
+}
+.assign-course-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.assign-course-description {
+    font-size: 14px;
+    color: #737373;
+    margin-bottom: 24px;
+}
+.assign-course-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 32px;
+}
+.assign-course-left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.assign-course-right {
+    display: flex;
+    flex-direction: column;
+    /* Ensure the textarea takes up the remaining height */
+}
+/* Adjust the textarea height to fill the space visually */
+.assign-course-right .textarea {
+    min-height: 200px; 
+    height: 100%; /* Important to fill the right column */
+    resize: none;
+}
+
+/* --- Responsive Adjustments for Courses Page --- */
+@media (max-width: 768px) {
+    .assign-course-form {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        gap: 24px;
+    }
+}
